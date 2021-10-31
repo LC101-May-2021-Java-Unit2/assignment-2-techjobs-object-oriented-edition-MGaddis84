@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
 public class JobTest {
     public Job idJob;
     public Job fieldJob;
+    public Job stringJob;
 
     @Test
     public void testSettingJobId() {
@@ -46,14 +47,39 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job fieldJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals(false, idJob.equals(fieldJob));
+        assertFalse(idJob.equals(fieldJob));
 
     }
 
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
-
+        Job stringJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        char firstChar = stringJob.toString().charAt(0);
+        char lastChar = stringJob.toString().charAt(stringJob.toString().length() - 1);
+        assertTrue(firstChar == lastChar);
     }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job labelJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String output2 = "\nID: " + labelJob.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n";
+        assertEquals(output2, labelJob.toString());
+    }
+
+   @Test
+   public void testToStringHandlesEmptyField() {
+        Job emptyJob = new Job();
+        String output = "\nID: " + emptyJob.getId() + "\nName: Data not available\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n";
+        assertEquals(output, emptyJob.toString());
+
+   }
+
+
+   // }
+
+
 
 }
 

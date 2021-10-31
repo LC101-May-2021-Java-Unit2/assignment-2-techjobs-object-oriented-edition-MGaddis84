@@ -19,6 +19,7 @@ public class Job {
     }
 
     public Job (String aName, Employer anEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency) {
+        this();
         name = aName;
         employer = anEmployer;
         location = aLocation;
@@ -82,5 +83,40 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+    @Override
+    public String toString() {
+        String nameOutput = null;
+        if (name == null) {
+            nameOutput = "Data not available";
+        }else {
+            nameOutput = name;
+        }
+        String employerOutput = null;
+        if (employer == null) {
+            employerOutput = "Data not available";
+        }else {
+            employerOutput = employer.toString();
+        }
+        String locationOutput = null;
+        if (location == null) {
+            locationOutput = "Data not available";
+        }else {
+            locationOutput = location.toString();
+        }
+        String positionTypeOutput = null;
+        if (positionType == null) {
+            positionTypeOutput = "Data not available";
+        }else {
+            positionTypeOutput = positionType.toString();
+        }
+        String coreCompetencyOutput = null;
+        if (coreCompetency == null) {
+            coreCompetencyOutput = "Data not available";
+        }else {
+            coreCompetencyOutput = coreCompetency.toString();
+        }
 
+        return String.format("\n" + "ID: " + id + "\n" + "Name: " + nameOutput + "\n" + "Employer: " + employerOutput +"\n" + "Location: " + locationOutput
+                + "\n" + "Position Type: " + positionTypeOutput + "\n" + "Core Competency: " + coreCompetencyOutput + "\n");
+    }
 }
