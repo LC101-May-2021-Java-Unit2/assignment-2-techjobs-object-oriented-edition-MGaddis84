@@ -1,12 +1,14 @@
 package org.launchcode.techjobs.oo;
 
+import org.launchcode.techjobs.oo.test.JobField;
+
 import java.util.Objects;
 
-public class CoreCompetency {
+public class CoreCompetency extends JobField {
 
-    private int id;
-    private static int nextId = 1;
-    private String value;
+    public CoreCompetency(String value) {
+        super(value);
+    }
 
     public String getValue() {
         return value;
@@ -23,16 +25,6 @@ public class CoreCompetency {
     public CoreCompetency() {
         this.id = nextId;
         nextId++;
-    }
-
-    public CoreCompetency(String value) {
-        this();
-        this.value = value;
-    }
-
-    @Override
-    public String toString() {
-        return value;
     }
 
     @Override
