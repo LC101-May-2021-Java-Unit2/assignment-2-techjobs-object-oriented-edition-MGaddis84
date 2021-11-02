@@ -22,11 +22,6 @@ public class CoreCompetency extends JobField {
         return id;
     }
 
-    public CoreCompetency() {
-        this.id = nextId;
-        nextId++;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

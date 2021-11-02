@@ -32,12 +32,12 @@ public class Job {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency);
+        return getId() == job.getId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+        return Objects.hash(getId());
     }
 
     public int getId() {
@@ -116,7 +116,7 @@ public class Job {
             coreCompetencyOutput = coreCompetency.toString();
         }
 
-        return String.format("\n" + "ID: " + id + "\n" + "Name: " + nameOutput + "\n" + "Employer: " + employerOutput +"\n" + "Location: " + locationOutput
-                + "\n" + "Position Type: " + positionTypeOutput + "\n" + "Core Competency: " + coreCompetencyOutput + "\n");
+        return String.format('\n' + "ID: " + id + "\n" + "Name: " + nameOutput + "\n" + "Employer: " + employerOutput +"\n" + "Location: " + locationOutput
+                + "\n" + "Position Type: " + positionTypeOutput + "\n" + "Core Competency: " + coreCompetencyOutput + '\n');
     }
 }

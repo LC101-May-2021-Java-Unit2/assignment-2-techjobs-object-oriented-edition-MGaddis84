@@ -24,14 +24,14 @@ public class JobTest {
     }
 
     @Test
-    public void testConstructorSetsAllFields() {
+    public void testJobConstructorSetsAllFields() {
         Job idJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Object expected = "";
-        assertEquals(expected= "Product tester", idJob.getName());
-        assertEquals(expected= "ACME", idJob.getEmployer().getValue());
-        assertEquals(expected= "Desert", idJob.getLocation().getValue());
-        assertEquals(expected= "Quality control", idJob.getPositionType().getValue());
-        assertEquals(expected= "Persistence", idJob.getCoreCompetency().getValue());
+//        Object expected = "";
+        assertEquals( "Product tester", idJob.getName());
+        assertEquals( "ACME", idJob.getEmployer().getValue());
+        assertEquals( "Desert", idJob.getLocation().getValue());
+        assertEquals( "Quality control", idJob.getPositionType().getValue());
+        assertEquals( "Persistence", idJob.getCoreCompetency().getValue());
 
         assertTrue(idJob.getName() instanceof String);
         assertTrue(idJob.getEmployer() instanceof Employer);
@@ -57,7 +57,8 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
         char firstChar = stringJob.toString().charAt(0);
         char lastChar = stringJob.toString().charAt(stringJob.toString().length() - 1);
-        assertTrue(firstChar == lastChar);
+        assertEquals(firstChar, '\n');
+        assertEquals(firstChar, '\n');
     }
 
     @Test
