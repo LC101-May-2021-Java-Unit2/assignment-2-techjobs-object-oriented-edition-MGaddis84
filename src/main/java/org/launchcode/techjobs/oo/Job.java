@@ -92,7 +92,7 @@ public class Job {
             nameOutput = name;
         }
         String employerOutput = null;
-        if (employer == null) {
+        if (employer == null || employer.toString().equals("")) {
             employerOutput = "Data not available";
         }else {
             employerOutput = employer.toString();
@@ -104,7 +104,7 @@ public class Job {
             locationOutput = location.toString();
         }
         String positionTypeOutput = null;
-        if (positionType == null) {
+        if (positionType == null || positionType.toString().equals("")) {
             positionTypeOutput = "Data not available";
         }else {
             positionTypeOutput = positionType.toString();

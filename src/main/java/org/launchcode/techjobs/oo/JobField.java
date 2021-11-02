@@ -1,8 +1,4 @@
-package org.launchcode.techjobs.oo.test;
-
-import org.launchcode.techjobs.oo.PositionType;
-
-import java.util.Objects;
+package org.launchcode.techjobs.oo;
 
 public abstract class JobField {
 
